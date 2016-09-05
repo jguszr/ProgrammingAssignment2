@@ -1,10 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Week3 assigniment by Jose Gustavo Z. Rosa (jguszr@gmail.com)
+## those two functions are based on the matrix inversion with cache sutf 
 
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-
+  print("foobar")
 }
 
 
