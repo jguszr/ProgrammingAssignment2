@@ -1,8 +1,7 @@
 ## Week3 assigniment by Jose Gustavo Z. Rosa (jguszr@gmail.com)
 ## those two functions are based on the matrix inversion with cache sutf
 
-## Write a short comment describing this function
-
+## Creates the object that actually contains the matrix, Pretty much follow the vector example.
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -23,17 +22,18 @@ makeCacheMatrix <- function(x = matrix()) {
   )
 }
 
-## Write a short comment describing this function
-
+## uses the lexical scope R feature to acctually stores in memorey the inverse of the matrix passed as the x argument.
+## I just follow the vector example as well.
 cacheSolve <- function(x, ...) {
   m <- x$getinverse()
-  if (!is.null(m)) {
-    message("Probably there is some cached data hanging here...")
+  if (is.null(m)) {
+    data <- x$get()
+    m <- solve(data) %*% data
+    x$setinverse(m)
     return(m)
   }
-  data <- x$get()
-  m <- solve(data) %*% data
-  x$setinverse(m)
+  message("There is some cached data hanging here...")
   m
+  
   
 }
