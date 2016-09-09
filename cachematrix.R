@@ -28,12 +28,11 @@ cacheSolve <- function(x, ...) {
   m <- x$getinverse()
   if (is.null(m)) {
     data <- x$get()
-    m <- solve(data) %*% data
+    m <- solve(data)
     x$setinverse(m)
     return(m)
   }
   message("There is some cached data hanging here...")
   m
-  
   
 }
